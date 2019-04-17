@@ -6,13 +6,13 @@
 //  Copyright © 2019 Ryan Summe. All rights reserved.
 //
 
-class AdManager {
-  
-  let interstitialAdManager = InterstitialAdManager()
-  let rewardedAdManager = RewardedAdManager()
-  
-  func loadAds() {
-    interstitialAdManager.loadAd()
-    rewardedAdManager.loadAd()
-  }
-}
+//class AdManager {
+//  
+//  let interstitialAdManager = InterstitialAdManager()
+//  let rewardedAdManager = RewardedAdManager()
+//  
+//  func loadAds() {
+//    interstitialAdManager.loadAd()
+//    rewardedAdManager.loadAd()
+//  }
+//}

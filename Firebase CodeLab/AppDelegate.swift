@@ -17,23 +17,24 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   let window: UIWindow
-  let adManager: AdManager
+//  let adManager: AdManager
   
   override init() {
     window = UIWindow()
     window.makeKeyAndVisible()
-    adManager = AdManager()
+//    adManager = AdManager()
     super.init()
   }
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-    FirebaseConfiguration.shared.setLoggerLevel(.min)
-    FirebaseApp.configure()
-    GADMobileAds.sharedInstance().start(completionHandler: nil)
-    setupRemoteConfig()
+//    FirebaseConfiguration.shared.setLoggerLevel(.min)
+//    FirebaseApp.configure()
+//    GADMobileAds.sharedInstance().start(completionHandler: nil)
+//    setupRemoteConfig()
     
-    let navCon = UINavigationController(rootViewController: ViewController(adManager: adManager))
+//    let navCon = UINavigationController(rootViewController: ViewController(adManager: adManager))
+    let navCon = UINavigationController(rootViewController: ViewController())
     window.rootViewController = navCon
     
     return true
@@ -41,33 +42,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func setupRemoteConfig() {
     
-    let config = RemoteConfig.remoteConfig()
-    config.configSettings = RemoteConfigSettings(developerModeEnabled: true)
-    config.setDefaults(fromPlist: "RCDefaults")
-    
-    config.fetch(withExpirationDuration: 0) { (fetchStatus, error) in
-      
-      if let error = error {
-        print("error fetching: " + error.localizedDescription)
-        return
-      }
-      
-      config.activateFetched()
-      self.adManager.interstitialAdManager.adUnitID = RemoteConfigManager.interstitialAdUnitID
-      self.adManager.rewardedAdManager.adUnitID = RemoteConfigManager.rewardedAdUnitID
-      self.adManager.loadAds()
-      
-      RemoteConfigManager.logParams()
-    }
-    
-    InstanceID.instanceID().instanceID { (result, error) in
-      if let error = error {
-        print("Error fetching remote instance ID: \(error)")
-      } else if let result = result {
-        print("RYSU Remote instance ID token: \(result.token)")
-      }
-    }
-    
+//    let config = RemoteConfig.remoteConfig()
+//    config.configSettings = RemoteConfigSettings(developerModeEnabled: true)
+//    config.setDefaults(fromPlist: "RCDefaults")
+//
+//    config.fetch(withExpirationDuration: 0) { (fetchStatus, error) in
+//
+//      if let error = error {
+//        print("error fetching: " + error.localizedDescription)
+//        return
+//      }
+//
+//      config.activateFetched()
+//      self.adManager.interstitialAdManager.adUnitID = RemoteConfigManager.interstitialAdUnitID
+//      self.adManager.rewardedAdManager.adUnitID = RemoteConfigManager.rewardedAdUnitID
+//      self.adManager.loadAds()
+//
+//      RemoteConfigManager.logParams()
+//    }
+  
+//    InstanceID.instanceID().instanceID { (result, error) in
+//      if let error = error {
+//        print("Error fetching remote instance ID: \(error)")
+//      } else if let result = result {
+//        print("RYSU Remote instance ID token: \(result.token)")
+//      }
+//    }
+
   }
 
 }

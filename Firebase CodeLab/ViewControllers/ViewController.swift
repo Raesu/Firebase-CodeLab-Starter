@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAnalytics
+//import FirebaseAnalytics
 
 class ViewController: BaseViewController {
 
@@ -17,16 +17,16 @@ class ViewController: BaseViewController {
     view.backgroundColor = .white
     navigationItem.title = "Firebase CodeLab!"
     
-    addButton(withTitle: "Check Details Page")
+//    addButton(withTitle: "Check Details Page")
     
   }
 
   @objc override func buttonPressed() {
     
-    adManager.interstitialAdManager.attemptToShowAd(fromViewController: self) {
-      let vc = DetailViewController(adManager: self.adManager)
-      self.navigationController?.pushViewController(vc, animated: true)
-    }
+//    adManager.interstitialAdManager.attemptToShowAd(fromViewController: self) {
+//      let vc = DetailViewController(adManager: self.adManager)
+//      self.navigationController?.pushViewController(vc, animated: true)
+//    }
     
   }
 
