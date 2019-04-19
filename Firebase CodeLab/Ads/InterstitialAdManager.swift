@@ -10,7 +10,7 @@
 //
 //class InterstitialAdManager: BaseAdManager {
 //
-//  var adUnitID = "ca-app-pub-6562905997824789/5875510304"
+//  var adUnitID = "ca-app-pub-3940256099942544/4411468910"
 //  private var completionHandler: (() -> Void)?
 //
 //  private lazy var ad: GADInterstitial = {
